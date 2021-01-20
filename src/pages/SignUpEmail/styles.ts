@@ -6,54 +6,39 @@ const styles =StyleSheet.create({
     backgroundColor: '#f0f0f7'
   },
   topBar:{
-    flexDirection: 'row',
-    alignItems: 'center',
+    paddingTop: 100,
+    paddingBottom: 60,
+    alignItems: 'flex-start',
     justifyContent: 'center',
-  },
-  content:{
-    flex:1,
-    backgroundColor: '#8257e5',
-    alignSelf: 'center',
-    padding:80,
-  },
-  banner:{
-    width: 160,
-    height: 80,
-    alignSelf: 'center',
-    justifyContent: 'center',
-    marginTop: 85,
-    marginBottom: 84,
-  },
-  formContainer:{
-    // backgroundColor: '#ED4C2FF',
-    // flex:1
-  },
-  formTitle:{
-    flexDirection: 'row',
-    alignItems: 'baseline',
-    justifyContent: 'space-between',
-    paddingLeft: 15,
-    paddingRight: 25,
-    marginBottom: 30,
+    marginLeft: 32,
   },
   title:{
-    fontSize: 24,
     fontFamily:'Poppins_600SemiBold',
-    lineHeight: 34,
+    fontSize: 32,
+    lineHeight: 42,
+    color: '#32264D',
+    marginTop: 35,
+    maxWidth: 300,
+  },
+  description:{
+    fontFamily:'Poppins_400Regular',
+    fontSize: 14,
+    lineHeight: 24,
+    color: '#6A6180',
+    maxWidth: 230,
+    marginTop: 30,
+  },
+
+  formTitle:{
+    fontFamily:'Poppins_600SemiBold',
+    fontSize: 24,
+    lineHeight: 26,
     color: '#32264D',
     marginLeft: 32,
-    marginTop: 35
-
-  },
-  register:{
-    fontFamily:'Poppins_400Regular',
-    fontSize: 12,
-    lineHeight: 24,
-    color: '#8257E5',
-    textAlign: 'right',
-    marginRight: 10,
-
-  },
+    marginBottom: 50,
+    maxWidth: 300,
+    alignSelf: 'flex-start',
+    },
 
   input:{
     width: 330,
@@ -65,18 +50,8 @@ const styles =StyleSheet.create({
     borderRadius: 8,
     alignSelf:'center',
   },
-  forgot:{
-    fontFamily:'Poppins_400Regular',
-    fontSize: 12,
-    lineHeight: 24,
-    color: '#9C98A6',
-    textAlign: 'right',
-    marginRight: 32,
-    marginTop: 30,
-
-  },
   button:{
-    marginVertical: 20,
+    marginVertical: 50,
     backgroundColor: '#DCDCE5',
     height: 58,
     alignItems: 'center',

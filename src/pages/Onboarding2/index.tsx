@@ -9,7 +9,6 @@ import { useFocusEffect } from '@react-navigation/native';
 
 import OnboardHeader from '../../components/OnboardHeader';
 import GiveClasses from '../../assets/images/icons/give-classes.png';
-import SuccessRegister from '../SuccessRegister';
 
 
 

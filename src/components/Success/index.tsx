@@ -11,14 +11,14 @@ interface SuccessProps{
   title:string;
   description:string;
   textButton:string;
+  destination:string;
 }
 
 
-const Success: React.FC<SuccessProps> = ({title, description, textButton}) => {
+const Success: React.FC<SuccessProps> = ({title, description, textButton, destination}) => {
   const {navigate} = useNavigation();
-  // const {goBack} = useNavigation();
   function handleNavigateBack(){
-    navigate('Onboarding')
+    navigate(destination)
   }
   return (
     <View style={styles.container}>

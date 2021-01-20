@@ -29,54 +29,38 @@ const styles =StyleSheet.create({
     // flex:1
   },
   formTitle:{
-    flexDirection: 'row',
-    alignItems: 'baseline',
-    justifyContent: 'space-between',
-    paddingLeft: 15,
-    paddingRight: 25,
-    marginBottom: 30,
+    marginVertical: 15,
+    marginLeft: 32,
   },
   title:{
     fontSize: 24,
     fontFamily:'Poppins_600SemiBold',
     lineHeight: 34,
     color: '#32264D',
-    marginLeft: 32,
-    marginTop: 35
+    marginVertical: 30
 
   },
-  register:{
+  description:{
     fontFamily:'Poppins_400Regular',
-    fontSize: 12,
+    fontSize: 14,
     lineHeight: 24,
-    color: '#8257E5',
-    textAlign: 'right',
-    marginRight: 10,
+    color: '#6A6180',
+    maxWidth: 230,
 
   },
 
   input:{
     width: 330,
     height:64,
-    // marginHorizontal: 32,
+    marginVertical: 10,
     paddingLeft: 32,
     borderColor: '#E6E6F0',
     borderWidth: 1,
     borderRadius: 8,
     alignSelf:'center',
   },
-  forgot:{
-    fontFamily:'Poppins_400Regular',
-    fontSize: 12,
-    lineHeight: 24,
-    color: '#9C98A6',
-    textAlign: 'right',
-    marginRight: 32,
-    marginTop: 30,
-
-  },
   button:{
-    marginVertical: 20,
+    marginVertical: 10,
     backgroundColor: '#DCDCE5',
     height: 58,
     alignItems: 'center',

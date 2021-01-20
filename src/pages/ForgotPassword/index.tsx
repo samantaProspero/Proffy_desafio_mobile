@@ -7,14 +7,17 @@ import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-community/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
 import IntroImg from '../../assets/images/Intro.png';
+import backIcon from '../../assets/images/icons/back.png'
 import OnbordBgImage from '../../assets/images/Background.png';
 
+import SuccessRescuePassword from '../SuccessRescuePassword';
+import SignUpName from '../SignUpName';
 import styles from './styles';
 import api from '../../services/api';
 // import { useAuth } from '../../contexts/auth';
 
 
-function SignIn (){
+function ForgotPassword (){
   // const history = useHistory();
 
   const [email, setEmail] = useState('');
@@ -40,19 +43,13 @@ function SignIn (){
 
 
 
-  const { navigate } = useNavigation();
-  function handleGo() {
-    navigate('Landing');
+  const { navigate, goBack } = useNavigation();
+  function handleGoBack() {
+    goBack();
   }
 
-  function handleNavigateToRegister(){
-    navigate('SignUpName')
-  }
-  function handleNavigateToForgot(){
-    navigate('ForgotPassword')
-  }
   function handleSubmit(){
-    navigate('ProfileCreate')
+    navigate('SuccessRescuePassword')
   }
 
   return (
@@ -67,11 +64,14 @@ function SignIn (){
       </ImageBackground>
       </View>
       <View style={styles.formContainer}>
+
         <View style={styles.formTitle}>
-          <Text style={styles.title}>Fazer Login</Text>
-          <Text onPress={handleNavigateToRegister} style={styles.register}>
-            Criar uma conta
-          </Text>
+          <BorderlessButton onPress={handleGoBack}>
+            <Image source={backIcon} resizeMode="contain" />
+          </BorderlessButton>
+          <Text style={styles.title}>Esqueceu sua senha?</Text>
+          <Text style={styles.description}>Não esquenta, </Text>
+          <Text style={styles.description}>vamos dar um jeito nisso.</Text>
         </View>
         <View>
           <TextInput
@@ -80,15 +80,6 @@ function SignIn (){
           value= {email}
           onChangeText={setEmail}
           />
-          <TextInput
-          style={styles.input}
-          placeholder="Senha"
-          value= {password}
-          onChangeText={setPassword}
-          />
-          <Text onPress={handleNavigateToForgot} style={styles.forgot}>
-            Esqueci minha senha
-          </Text>
           <RectButton onPress={handleSubmit} style={[styles.button, styles.buttonSecondary]}>
             <Text style={[styles.buttonText, styles.buttonTextSecondary]}>Entrar</Text>
           </RectButton>
@@ -99,4 +90,4 @@ function SignIn (){
     </View>
   )
 }
-export default SignIn;
+export default ForgotPassword;

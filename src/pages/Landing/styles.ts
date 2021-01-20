@@ -53,6 +53,13 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     marginTop: 40
 
+  },
+  login:{
+    fontFamily:'Poppins_400Regular',
+    color: '#d4c2ff',
+    fontSize:12,
+    lineHeight: 20,
+    marginTop: 40
   }
 });
 export default styles;

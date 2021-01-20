@@ -9,16 +9,18 @@ import { useFocusEffect } from '@react-navigation/native';
 import IntroImg from '../../assets/images/Intro.png';
 import OnbordBgImage from '../../assets/images/Background.png';
 
+import backIcon from '../../assets/images/icons/back.png'
+import SuccessRegister from '../SuccessRegister';
 import styles from './styles';
 import api from '../../services/api';
 // import { useAuth } from '../../contexts/auth';
 
 
-function SignIn (){
+function SignUpName (){
   // const history = useHistory();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  const [lastname, SetLastName] = useState('');
 
   // async function handleSign(event: FormEvent){
   //   try {
@@ -40,63 +42,47 @@ function SignIn (){
 
 
 
-  const { navigate } = useNavigation();
-  function handleGo() {
-    navigate('Landing');
-  }
-
-  function handleNavigateToRegister(){
-    navigate('SignUpName')
-  }
-  function handleNavigateToForgot(){
-    navigate('ForgotPassword')
+  const { navigate, goBack } = useNavigation();
+  function handleGoBack() {
+    goBack()
   }
   function handleSubmit(){
-    navigate('ProfileCreate')
+    navigate('SuccessRegister')
   }
 
   return (
     <View style={styles.container}>
       <View style={styles.topBar}>
-      <ImageBackground 
-        resizeMode="center" 
-        source={OnbordBgImage} 
-        style={styles.content}
-      >
-      <Image source={IntroImg} style={styles.banner} />
-      </ImageBackground>
+        <BorderlessButton onPress={handleGoBack}>
+          <Image source={backIcon} resizeMode="contain" />
+        </BorderlessButton>
+
+        <Text style={styles.title}>Crie sua conta gratuita</Text>
+        <Text style={styles.description}>
+          Basta preencher os dados e você estará conosco.
+        </Text>
       </View>
-      <View style={styles.formContainer}>
-        <View style={styles.formTitle}>
-          <Text style={styles.title}>Fazer Login</Text>
-          <Text onPress={handleNavigateToRegister} style={styles.register}>
-            Criar uma conta
-          </Text>
-        </View>
+      <View>
+        <Text style={styles.formTitle}>02. Email e senha</Text>
         <View>
           <TextInput
           style={styles.input}
           placeholder="Email"
-          value= {email}
-          onChangeText={setEmail}
+          value= {name}
+          onChangeText={text => setName(text)}
           />
           <TextInput
           style={styles.input}
-          placeholder="Senha"
-          value= {password}
-          onChangeText={setPassword}
+          placeholder="************"
+          value= {lastname}
+          onChangeText={text => SetLastName(text)}
           />
-          <Text onPress={handleNavigateToForgot} style={styles.forgot}>
-            Esqueci minha senha
-          </Text>
           <RectButton onPress={handleSubmit} style={[styles.button, styles.buttonSecondary]}>
-            <Text style={[styles.buttonText, styles.buttonTextSecondary]}>Entrar</Text>
+            <Text style={[styles.buttonText, styles.buttonTextSecondary]}>Próximo</Text>
           </RectButton>
-
-
         </View>
       </View>
     </View>
   )
 }
-export default SignIn;
+export default SignUpName;
