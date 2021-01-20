@@ -12,7 +12,7 @@ import heartIcon from '../../assets/images/icons/heart.png'
 
 import styles from './styles';
 
-function Landing () {
+function SignIn () {
   const {navigate} = useNavigation();
   const [totalConnections, setTotalConnections] = useState(0);
 
@@ -60,4 +60,4 @@ function Landing () {
   )
 }
 
-export default Landing
+export default SignIn;
