@@ -21,7 +21,7 @@ function Onboarding2 (){
     <View style={styles.container}>
       <OnboardHeader
         backgroundTopBar = '#04D361'
-        destinationNavigate = 'SuccessRegister'
+        destinationNavigate = 'SignIn'
         iconTopBar={(
           <Image source={GiveClasses} style={styles.banner} />
         )}

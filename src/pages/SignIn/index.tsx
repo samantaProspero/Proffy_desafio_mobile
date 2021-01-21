@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, FormEvent } from 'react';
 import { View, Image, ImageBackground, Text, TextInput } from 'react-native';
-import { BorderlessButton, RectButton } from 'react-native-gesture-handler';
+import { BorderlessButton, RectButton, TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -11,34 +11,16 @@ import OnbordBgImage from '../../assets/images/Background.png';
 
 import styles from './styles';
 import api from '../../services/api';
-// import { useAuth } from '../../contexts/auth';
-
+import { useAuth } from '../../contexts/auth';
 
 function SignIn (){
-  // const history = useHistory();
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const {signIn} = useAuth();
 
-  // async function handleSign(event: FormEvent){
-  //   try {
-  //     event.preventDefault();
-
-  //     const response = await api.post('/login', {email, password})
-  //     const{ user, token } = response.data
-
-  //     signIn(user, token)
-  //     alert('Login realizado com sucesso!')
-  //     history.push('/classes')
-  
-  //   } catch (error) {
-  //     alert('Login deu ruim!')
-  //     history.push('/')
-
-  //   }
-  // }
-
-
+  function handleSign(){
+    signIn(email, password);
+  }
 
   const { navigate } = useNavigation();
   function handleGo() {
@@ -46,15 +28,11 @@ function SignIn (){
   }
 
   function handleNavigateToRegister(){
-    navigate('SignUpName')
+    navigate('SignUp')
   }
   function handleNavigateToForgot(){
     navigate('ForgotPassword')
   }
-  function handleSubmit(){
-    navigate('ProfileCreate')
-  }
-
   return (
     <View style={styles.container}>
       <View style={styles.topBar}>
@@ -77,21 +55,24 @@ function SignIn (){
           <TextInput
           style={styles.input}
           placeholder="Email"
+          autoCapitalize="none"
           value= {email}
-          onChangeText={setEmail}
+          onChangeText={ (text) => setEmail(text)}
           />
           <TextInput
           style={styles.input}
           placeholder="Senha"
+          autoCapitalize="none"
           value= {password}
           onChangeText={setPassword}
+          secureTextEntry={true}
           />
           <Text onPress={handleNavigateToForgot} style={styles.forgot}>
             Esqueci minha senha
           </Text>
-          <RectButton onPress={handleSubmit} style={[styles.button, styles.buttonSecondary]}>
+          <TouchableOpacity onPress={handleSign} style={[styles.button, styles.buttonSecondary]}>
             <Text style={[styles.buttonText, styles.buttonTextSecondary]}>Entrar</Text>
-          </RectButton>
+          </TouchableOpacity>
 
 
         </View>

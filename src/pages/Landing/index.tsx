@@ -28,9 +28,6 @@ function Landing () {
   function handleNavigateToStudyPages(){
     navigate('Study')
   }
-  function handleNavigateToLogin(){
-    navigate('SignIn')
-  }
   return (
     <View style={styles.container}>
 
@@ -57,10 +54,6 @@ function Landing () {
   Total de {totalConnections} conexões já realizadas {' '}
         <Image source={heartIcon} />
       </Text>
-      <Text onPress={handleNavigateToLogin} style={styles.login}>
-        Login
-      </Text>
-
     </View>
   )
 }

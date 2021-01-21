@@ -7,6 +7,12 @@ const styles =StyleSheet.create({
   },
   teacherList:{
     marginTop: -40,
+  },
+  signOutButton:{
+    position: 'absolute',
+    top: 80,
+    right: 32,
+    zIndex: 1,
   }
 })
 export default styles;

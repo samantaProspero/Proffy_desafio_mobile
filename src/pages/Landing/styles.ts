@@ -17,14 +17,14 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize:20,
     lineHeight: 30,
-    marginTop: 80
+    marginTop: 90
   },
   titleBold:{
     fontFamily:'Poppins_600SemiBold',
   },
   buttonsContainer:{
     flexDirection: 'row',
-    marginTop: 40,
+    marginTop: 60,
     justifyContent: 'space-between'
   },
   button: {
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     color: '#d4c2ff',
     fontSize:12,
     lineHeight: 20,
-    marginTop: 40
+    marginTop: 50
 
   },
   login:{
